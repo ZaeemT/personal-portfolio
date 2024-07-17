@@ -7,7 +7,6 @@ export default function Home() {
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <Hero />
       <About />
-        <ModeToggle />
     </main>
   );
 }
