@@ -1,10 +1,12 @@
+import { About } from "@/components/About";
 import { Hero } from "@/components/Hero";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Hero />
+    <main className="flex flex-col min-h-[100dvh] space-y-10">
+      <Hero />
+      <About />
         <ModeToggle />
     </main>
   );
