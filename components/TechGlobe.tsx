@@ -43,7 +43,7 @@ const slugs = [
 
 export function TechGlobe() {
   return (
-    <div className="h-full w-full max-w-2xl items-center justify-center overflow-hidden bg-background px-20 pb-20 pt-8">
+    <div className="h-full w-full max-w-2xl items-center justify-center overflow-hidden bg-background px-20 pb-20">
       <IconCloud iconSlugs={slugs} />
     </div>
   );
