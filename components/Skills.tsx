@@ -21,7 +21,7 @@ export function Skills() {
                     <div className='text-xl text-foreground self-center font-semibold'>Core Tools</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiCplusplus className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>C++</span>
@@ -29,7 +29,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaPython className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Python</span>
@@ -37,7 +37,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <BiLogoJavascript className='text-background' fontSize="35px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>JavaScript</span>
@@ -45,7 +45,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <BiLogoTypescript className='text-background' fontSize="35px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>TypeScript</span>
@@ -53,7 +53,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaGitAlt className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Git</span>
@@ -65,7 +65,7 @@ export function Skills() {
                     <div className='text-xl text-foreground self-center font-semibold'>Front End</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaHtml5 className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>HTML</span>
@@ -73,7 +73,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaCss3Alt className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>CSS</span>
@@ -81,7 +81,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaReact className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>React</span>
@@ -89,7 +89,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiRedux className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Redux</span>
@@ -97,7 +97,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <TbBrandNextjs className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Next</span>
@@ -105,7 +105,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiTailwindcss className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Tailwindcss</span>
@@ -113,7 +113,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaBootstrap className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Bootstrap</span>
@@ -125,7 +125,7 @@ export function Skills() {
                     <div className='text-xl text-foreground self-center font-semibold'>Back End</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaNodeJs className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Node</span>
@@ -133,7 +133,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiExpress className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Express</span>
@@ -141,7 +141,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiFlask className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Flask</span>
@@ -149,7 +149,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiDjango className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Django</span>
@@ -157,7 +157,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiMongodb className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>MongoDB</span>
@@ -165,7 +165,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <BiLogoPostgresql className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>PostgreSQL</span>
@@ -173,7 +173,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiMysql className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>MySQL</span>
@@ -181,7 +181,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiOracle className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>OracleDB</span>
@@ -189,7 +189,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiFirebase className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Firebase</span>
@@ -201,7 +201,7 @@ export function Skills() {
                     <div className='text-xl text-foreground self-center font-semibold'>Other Tools</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaGithub className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>GitHub</span>
@@ -209,7 +209,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaAws className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>AWS</span>
@@ -217,7 +217,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaDocker className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Docker</span>
@@ -225,7 +225,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiTerraform className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Terraform</span>
@@ -233,7 +233,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiTensorflow className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Tensorflow</span>
@@ -241,7 +241,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaLinux className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Linux</span>
@@ -249,7 +249,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiPostman className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Postman</span>
@@ -257,7 +257,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaFigma className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Figma</span>
@@ -265,7 +265,7 @@ export function Skills() {
                             </div>
                         </div>
                         <div className='inline-block group'>
-                            <div className='flex items-center bg-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiAdobeillustrator className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Illustrator</span>
