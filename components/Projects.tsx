@@ -2,6 +2,7 @@ import Link from "next/link";
 import BlurFade from "./magicui/blur-fade";
 import ShimmerButton from "./magicui/shimmer-button";
 import { ProjectCard } from "./ProjectCard";
+import { FaGithub, FaFilePdf } from "react-icons/fa";
 
 import { projects, github } from "@/public/content";
 
@@ -50,6 +51,7 @@ export function Projects() {
 					target="_blank"
 					>
 					<ShimmerButton className="shadow-2xl" borderRadius="50px">
+						<FaGithub className="size-5 text-foreground mr-2" />
 						<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
 							View my Github profile
 						</span>

@@ -4,7 +4,7 @@ import ShimmerButton from "./magicui/shimmer-button";
 import ShinyButton from "@/components/magicui/shiny-button";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { FaLinkedin } from 'react-icons/fa';
+import { FaFilePdf, FaLinkedin, FaLinkedinIn } from 'react-icons/fa';
 
 
 import { WorkCard } from "./WorkCard";
@@ -36,6 +36,7 @@ export function Work() {
 					target="_blank"
 					>
 					<ShimmerButton className="shadow-2xl" borderRadius="50px">
+						<FaFilePdf className="size-5 text-foreground mr-2" />
 						<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
 							View my Resume
 						</span>
@@ -49,6 +50,7 @@ export function Work() {
 					target="_blank"
 					>
 					<ShimmerButton className="shadow-2xl" borderRadius="50px">
+						<FaLinkedinIn className="size-5 text-foreground mr-2" />
 						<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
 							View my LinkedIn profile
 						</span>
