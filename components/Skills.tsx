@@ -17,8 +17,8 @@ export function Skills() {
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 6}>
                 <TechGlobe />
-                <div className='grid grid-cols-1 md:grid-cols-5 gap-2 my-5'>
-                    <div className='text-xl text-foreground self-center font-semibold'>Core Tools</div>
+                <div className='grid grid-cols-1 md:grid-cols-5 gap-2 mx-1 my-5'>
+                    <div className='text-xl text-muted-foreground self-center font-semibold'>Core Tools</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
@@ -62,7 +62,7 @@ export function Skills() {
                         </div>
                     </div>
                     
-                    <div className='text-xl text-foreground self-center font-semibold'>Front End</div>
+                    <div className='text-xl text-muted-foreground self-center font-semibold'>Front End</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
@@ -122,7 +122,7 @@ export function Skills() {
                         </div>
                     </div>
                     
-                    <div className='text-xl text-foreground self-center font-semibold'>Back End</div>
+                    <div className='text-xl text-muted-foreground self-center font-semibold'>Back End</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
@@ -198,7 +198,7 @@ export function Skills() {
                         </div>
                     </div>
                     
-                    <div className='text-xl text-foreground self-center font-semibold'>Other Tools</div>
+                    <div className='text-xl text-muted-foreground self-center font-semibold'>Other Tools</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
