@@ -32,8 +32,7 @@ export function Contact() {
                 >
                     an email on zaeemtauqir@hotmail.com
                 </Link>{" "}
-                I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                I&apos;ll respond whenever I can.
               </p>
             </div>
           </BlurFade>
