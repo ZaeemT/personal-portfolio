@@ -5,7 +5,6 @@ import { Skills } from "@/components/Skills";
 import { Work } from "@/components/Work";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (

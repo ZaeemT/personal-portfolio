@@ -5,7 +5,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export function Footer() {
     return (
-        <div className="mx-auto w-full pb-12 space-y-4 max-w-2xl text-sm prose text-pretty text-center font-sans text-muted-foreground dark:prose-invert">
+        <div className="mx-auto w-full pb-12 space-y-4 max-w-2xl text-sm prose text-pretty text-center font-sans text-muted-foreground dark:prose-invert px-4">
     	    <Separator className="mb-8"/>
             <BlurFade delay={BLUR_FADE_DELAY * 18}>
                 <div className="pb-12">

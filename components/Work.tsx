@@ -17,7 +17,7 @@ export function Work() {
 
   return (
 	
-    <div className="mx-auto w-full max-w-2xl space-y-4 pt-8">
+    <div className="mx-auto w-full max-w-2xl space-y-4 pt-8 px-4">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <h2 className="text-3xl font-bold tracking-tighter">Work Experience</h2>
         </BlurFade>

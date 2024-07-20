@@ -31,10 +31,10 @@ export function WorkCard(props:
             <CardContent>
                 <p>{props.description}</p>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="inline-block group">
                 {props.skills.map((label, i) => {
                     return (
-                        <Badge variant="default" key={i} className="m-1">{label}</Badge>
+                        <Badge variant="secondary" key={i} className="m-1">{label}</Badge>
                     )
                 })}
             </CardFooter>

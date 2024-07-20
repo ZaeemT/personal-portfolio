@@ -11,7 +11,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export function Projects() {
     return (
-        <div className="mx-auto w-full max-w-2xl space-y-4 pt-8">
+        <div className="mx-auto w-full max-w-2xl space-y-4 pt-8 px-4">
         
 			<BlurFade delay={BLUR_FADE_DELAY * 11}>
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
