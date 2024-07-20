@@ -36,7 +36,7 @@ export function Work() {
 					target="_blank"
 					>
 					<ShimmerButton className="shadow-2xl" borderRadius="50px">
-						<FaFilePdf className="size-5 text-foreground mr-2" />
+						<FaFilePdf className="size-5 text-white mr-2" />
 						<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
 							View my Resume
 						</span>
@@ -50,7 +50,7 @@ export function Work() {
 					target="_blank"
 					>
 					<ShimmerButton className="shadow-2xl" borderRadius="50px">
-						<FaLinkedinIn className="size-5 text-foreground mr-2" />
+						<FaLinkedinIn className="size-5 text-white mr-2" />
 						<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
 							View my LinkedIn profile
 						</span>
