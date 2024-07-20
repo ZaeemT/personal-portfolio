@@ -39,6 +39,9 @@ const slugs = [
   "linux",
   "adobephotoshop",
   "adobeillustrator",
+  "langchain",
+  "huggingface",
+  "openai"
 ];
 
 export function TechGlobe() {
