@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import BlurFade from "./magicui/blur-fade";
 import ShimmerButton from "./magicui/shimmer-button";
 import { FaGithub, FaFilePdf } from "react-icons/fa";
@@ -13,7 +11,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export function Projects() {
     return (
-        <div className="mx-auto w-full max-w-2xl space-y-4">
+        <div className="mx-auto w-full max-w-2xl space-y-4 pt-8">
         
 			<BlurFade delay={BLUR_FADE_DELAY * 11}>
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -47,18 +45,20 @@ export function Projects() {
             	))}
          	</div>
 		 	<div className="flex flex-col content-center item-center md:flex-row lg:flex-row">
-
-				<Link
-					href={github.link}
-					target="_blank"
-					>
-					<ShimmerButton className="shadow-2xl" borderRadius="50px">
-						<FaGithub className="size-5 text-white mr-2" />
-						<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
-							View my Github profile
-						</span>
-					</ShimmerButton>	
-				</Link>
+				<BlurFade delay={BLUR_FADE_DELAY * 15}>
+					<Link
+						href={github.link}
+						target="_blank"
+						>
+						<ShimmerButton className="shadow-2xl" borderRadius="50px">
+							<FaGithub className="size-5 text-white mr-2" />
+							<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
+								View my Github profile
+							</span>
+						</ShimmerButton>	
+					</Link>
+				</BlurFade>
+				
 			</div>
         </div>
     );

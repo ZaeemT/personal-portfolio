@@ -6,7 +6,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export function Contact() {
     return (
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pt-8">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 m-2 text-sm">

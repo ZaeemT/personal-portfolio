@@ -7,11 +7,10 @@ import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 
-import { github, email, linkedin } from "@/public/content";
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { github, email, linkedin, resume } from "@/public/content";
+import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf } from 'react-icons/fa';
 import { ModeToggle } from "./mode-toggle";
-import { TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
-import { Tooltip } from "@radix-ui/react-tooltip";
+import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from "./ui/tooltip";
 
 export function Navbar() {
   return (
@@ -59,7 +58,6 @@ export function Navbar() {
                         <p>Github</p>
                     </TooltipContent>
                 </Tooltip>
-
             </DockIcon>
 
             <DockIcon>
@@ -80,13 +78,32 @@ export function Navbar() {
                         <p>Email</p>
                     </TooltipContent>
                 </Tooltip>
+            </DockIcon>
 
+            <DockIcon>
+                <Tooltip>
+                    <TooltipTrigger>
+                        <Link
+                            href={resume.link}
+                            target="_blank"
+                            className={cn(
+                            buttonVariants({ variant: "ghost", size: "icon" }),
+                            "size-12 rounded-full",
+                            )}
+                        >
+                            <FaFilePdf className="size-6" />
+                        </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Resume</p>
+                    </TooltipContent>
+                </Tooltip>
             </DockIcon>
 
             <Separator orientation="vertical" className="h-full py-2" />
                     
             <DockIcon>
-                <ModeToggle />
+            <ModeToggle />
             </DockIcon>
                     
         </Dock>

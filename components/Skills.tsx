@@ -11,9 +11,9 @@ const BLUR_FADE_DELAY = 0.04;
 
 export function Skills() {
     return (
-        <div className='mx-auto w-full max-w-2xl'>
+        <div className='mx-auto w-full max-w-2xl space-y-4 pt-8'>
             <BlurFade delay={BLUR_FADE_DELAY * 4}>
-                <h2 className="text-3xl font-bold">Skills</h2>
+                <h2 className="text-3xl font-bold tracking-tighter">Technologies</h2>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 6}>
                 <TechGlobe />
