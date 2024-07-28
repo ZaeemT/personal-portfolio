@@ -11,7 +11,8 @@ interface Experience {
 interface Project {
     title: string;
     description: string;
-    link: string;
+    code_link: string;
+    live_link: string;
 }
 
 interface Social {
@@ -49,42 +50,50 @@ export const projects: Project[] = [
     {
         title: "IntelliDent",
         description: "Collaborated with Aga Khan University Hospital, sourcing a dataset of 1000 OPGs. Developed a web app that utilizes ML/DL models for teeth classification and segmentation on Orthopantomograms (OPGs).",
-        link: "#"
+        code_link: "#",
+        live_link: "#"
     },
     {
         title: "Workout Buddy",
         description: "Developed a web application using MERN stack, allowing users to record and manage their workouts.",
-        link: "https://github.com/ZaeemT/Workout-Tracking"
+        code_link: "https://github.com/ZaeemT/Workout-Tracking",
+        live_link: "https://workout-traking.vercel.app"
     },
     {
         title: "Transparent Background",
         description: "Created a web application using Flask, that allows you to remove background from images, and download those transparent images.",
-        link: "https://github.com/ZaeemT/Transparent_Background"
+        code_link: "https://github.com/ZaeemT/Transparent_Background",
+        live_link: "#"
     },
     {
         title: "Product Catalog",
         description: "Built a product catalog using Next.js with Redux that highlights skills in state management, API-based search static site generation and Next Routing.",
-        link: "https://github.com/ZaeemT/Product-catalog"
+        code_link: "https://github.com/ZaeemT/Product-catalog",
+        live_link: "https://the-product-catalog.vercel.app/"
     },
     {
         title: "Sign Language Recognition",
         description: "Recognizes 5 hand signs using custom CNN model and converts it to text and audio. Used Tensorflow and Python.",
-        link: "https://github.com/ZaeemT/Sign-Language-Recognition"
+        code_link: "https://github.com/ZaeemT/Sign-Language-Recognition",
+        live_link: "#"
     },
     {
         title: "Traffic Sign Detector",
         description: "Detecting German Traffic Signs using custom CNN model.",
-        link: "https://github.com/ZaeemT/Traffic-Sign-Detector"
+        code_link: "https://github.com/ZaeemT/Traffic-Sign-Detector",
+        live_link: "#"
     },
     {
         title: "Today I Learned (TIL)",
         description: "Built a fully responsive social media website using Django, where users share their updates regarding their productivity.",
-        link: "https://github.com/ZaeemT/TIL"
+        code_link: "https://github.com/ZaeemT/TIL",
+        live_link: "#"
     },
     {
         title: "Movie Browser",
         description: "Programmed a website used to search for movies, and display details of the searched movie. Requested APIs from TMDB, containing data on 864,220 movies.",
-        link: "https://github.com/ZaeemT/Movie-Browser"
+        code_link: "https://github.com/ZaeemT/Movie-Browser",
+        live_link: "#"
     },
 
 ];
