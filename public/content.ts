@@ -49,19 +49,19 @@ export const exp3: Experience = {
 export const projects: Project[] = [ 
     {
         title: "IntelliDent",
-        description: "Collaborated with Aga Khan University Hospital, sourcing a dataset of 1000 OPGs. Developed a web app that utilizes ML/DL models for teeth classification and segmentation on Orthopantomograms (OPGs).",
+        description: "Collaborated with Aga Khan University Hospital, sourcing a dataset of 1000 OPGs. Developed a web app that utilizes ML/DL models for teeth classification and segmentation on Orthopantomograms.",
         code_link: "#",
         live_link: "#"
     },
     {
         title: "Workout Buddy",
-        description: "Developed a web application using MERN stack, allowing users to record and manage their workouts.",
+        description: "Developed a web application using MERN stack and JWT Authentication, allowing users to record and manage their workouts.",
         code_link: "https://github.com/ZaeemT/Workout-Tracking",
         live_link: "https://workout-traking.vercel.app"
     },
     {
         title: "Transparent Background",
-        description: "Created a web application using Flask, that allows you to remove background from images, and download those transparent images.",
+        description: "Created a web application using Flask and leveraging flask sessions, that allows you to remove background from images, and download those transparent images.",
         code_link: "https://github.com/ZaeemT/Transparent_Background",
         live_link: "#"
     },
@@ -78,14 +78,14 @@ export const projects: Project[] = [
         live_link: "#"
     },
     {
-        title: "Traffic Sign Detector",
-        description: "Detecting German Traffic Signs using custom CNN model.",
+        title: "German Traffic Sign Detector",
+        description: "A custom CNN model detects and classifies various German traffic signs to enhance road safety and automation.",
         code_link: "https://github.com/ZaeemT/Traffic-Sign-Detector",
         live_link: "#"
     },
     {
         title: "Today I Learned (TIL)",
-        description: "Built a fully responsive social media website using Django, where users share their updates regarding their productivity.",
+        description: "Built a fully responsive social media website using Django and Tailwind CSS, where users who are authenticated can share their updates regarding their productivity.",
         code_link: "https://github.com/ZaeemT/TIL",
         live_link: "#"
     },

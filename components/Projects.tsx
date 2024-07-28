@@ -39,7 +39,8 @@ export function Projects() {
 						<ProjectCard
 						title={project.title}
 						description={project.description}
-						link={project.link}
+						code_link={project.code_link}
+						live_link={project.live_link}
 						/>
 					</BlurFade>
             	))}
