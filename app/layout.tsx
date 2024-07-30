@@ -10,6 +10,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Zaeem Tauqir",
   description: "Personal portfolio website",
+  openGraph: {
+    title: "Zaeem Tauqir",
+    description: "Welcome to my portfolio website. Here you can find my projects, blog posts, and contact information.",
+    url: "https://zaeemtauqir.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "[https://your-portfolio-url.com/preview.jpg]", // Ensure this URL is correct
+        width: 1200,
+        height: 630,
+        alt: "Preview Image",
+      },
+    ],
+  }
 };
 
 export default function RootLayout({
@@ -19,13 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>My Portfolio</title>
-        <meta name="title" property="og:title" content="Zaeem Tauqir - Portfolio"></meta>
-        <meta name="image" property="og:image" content="../public/portfolio-preview.png"></meta>
-        <meta name="description" property="og:description" content="Welcome to my portfolio website, that I built using Next.js and TypeScript. Here you can find my projects and contact information."></meta>
-        <meta name="author" content="Muhammad Zaeem Tauqir" />         
-      </Head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
