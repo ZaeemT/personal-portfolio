@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>My Portfolio</title>
-        <meta name="description" content="Welcome to my portfolio website. Here you can find my projects and contact information." />
+        <meta name="description" content="Welcome to my portfolio website, that I built using Next.js and TypeScript. Here you can find my projects and contact information." />
         <meta property="og:title" content="Zaeem Tauqir - Portfolio" />
         <meta property="og:description" content="Welcome to my portfolio website. Here you can find my projects and contact information." />
         <meta property="og:image" content="../public/portfolio-preview.png" />
