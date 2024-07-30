@@ -21,16 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>My Portfolio</title>
-        <meta name="description" content="Welcome to my portfolio website, that I built using Next.js and TypeScript. Here you can find my projects and contact information." />
-        <meta property="og:title" content="Zaeem Tauqir - Portfolio" />
-        <meta property="og:description" content="Welcome to my portfolio website. Here you can find my projects and contact information." />
-        <meta property="og:image" content="../public/portfolio-preview.png" />
-        <meta property="og:url" content="https://zaeemtauqir.vercel.app/" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zaeem Tauqir - Portfolio" />
-        <meta name="twitter:description" content="Welcome to my portfolio website. Here you can find my projects and contact information." />
-        <meta name="twitter:image" content="../public/portfolio-preview.png" />
+        <meta name="title" property="og:title" content="Zaeem Tauqir - Portfolio"></meta>
+        <meta name="image" property="og:image" content="../public/portfolio-preview.png"></meta>
+        <meta name="description" property="og:description" content="Welcome to my portfolio website, that I built using Next.js and TypeScript. Here you can find my projects and contact information."></meta>
+        <meta name="author" content="Muhammad Zaeem Tauqir" />         
       </Head>
       <body className={inter.className}>
         <ThemeProvider
