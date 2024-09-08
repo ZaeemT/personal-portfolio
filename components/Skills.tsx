@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaPython, FaGitAlt, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaNodeJs, FaAws, FaDocker, FaGithub, FaLinux, FaFigma } from 'react-icons/fa'
-import { SiCplusplus, SiTailwindcss, SiMysql, SiOracle, SiFlask, SiDjango, SiTensorflow, SiFirebase, SiTerraform, SiAdobeillustrator, SiExpress, SiMongodb, SiRedux, SiPostman } from "react-icons/si"
+import { SiCplusplus, SiTailwindcss, SiMysql, SiNestjs, SiOracle, SiAdonisjs, SiFlask, SiDjango, SiTensorflow, SiFirebase, SiTerraform, SiAdobeillustrator, SiExpress, SiMongodb, SiRedux, SiPostman } from "react-icons/si"
 import { BiLogoTypescript, BiLogoJavascript, BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 import BlurFade from "./magicui/blur-fade";
@@ -140,6 +140,22 @@ export function Skills() {
                                 </div>
                             </div>
                         </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiNestjs className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Nest</span>
+                                </div>
+                            </div>
+                        </div>
+                        {/* <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiAdonisjs className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Adonis</span>
+                                </div>
+                            </div>
+                        </div> */}
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiFlask className='text-background' fontSize="34px" />
