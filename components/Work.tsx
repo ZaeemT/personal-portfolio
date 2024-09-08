@@ -7,7 +7,7 @@ import { FaFilePdf, FaLinkedinIn } from 'react-icons/fa';
 
 import { WorkCard } from "./WorkCard";
 
-import { exp1, exp2, exp3, linkedin, resume } from "@/public/content";
+import { exp1, exp2, exp3, exp4, linkedin, resume } from "@/public/content";
 
   
 
@@ -24,7 +24,9 @@ export function Work() {
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <WorkCard company={exp1.company} title={exp1.title} period={exp1.period} description={exp1.description} skills={exp1.skills}/>
             <WorkCard company={exp2.company} title={exp2.title} period={exp2.period} description={exp2.description} skills={exp2.skills}/>
-            <WorkCard company={exp3.company} title={exp3.title} period={exp3.period} description={exp3.description} skills={exp3.skills}/>            
+            <WorkCard company={exp3.company} title={exp3.title} period={exp3.period} description={exp3.description} skills={exp3.skills}/> 
+            <WorkCard company={exp4.company} title={exp4.title} period={exp4.period} description={exp4.description} skills={exp4.skills}/>            
+
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
 			<div className="flex flex-col content-center item-center md:flex-row lg:flex-row">

@@ -22,12 +22,13 @@ interface Social {
 
 // Experience data
 export const exp1: Experience = {
-    company: "Pakistan Refinery Limited",
-    title: "Software Developer Intern",
-    period: "Jun. 2024 – Jul. 2024",
-    description: "Designed and implemented a system to monitor equipment issued to employees among 6 departments, including purchase order details, warranty information, and other attributes. Constructed an inventory management system, enhancing asset tracking and streamlining internal processes by 30%.",
+    company: "TekRevol",
+    title: "Backend Engineer",
+    period: "Aug. 2024 – Present",
+    description: "Programmed an e-commerce backend using MySQL, Node.js, and Adonis.js, managing over 10,000 transactions daily using stripe, and storing images using AWS S3. Contributed to the front-end of a healthcare project using React.js and TailwindCSS, estimated to improve user engagement by 25% and interface performance by 30%.",
     skills: ["MongoDB", "Express.js", "React.js", "Node.js"]
 }
+
 
 export const exp2: Experience = {
     company: "Upwork",
@@ -38,12 +39,22 @@ export const exp2: Experience = {
 }
 
 export const exp3: Experience = {
+    company: "Pakistan Refinery Limited",
+    title: "Software Developer Intern",
+    period: "Jun. 2024 – Jul. 2024",
+    description: "Designed and implemented a system to monitor equipment issued to employees among 6 departments, including purchase order details, warranty information, and other attributes. Constructed an inventory management system, enhancing asset tracking and streamlining internal processes by 30%.",
+    skills: ["MongoDB", "Express.js", "React.js", "Node.js"]
+}
+
+export const exp4: Experience = {
     company: "Dawood Family Takaful Limited",
     title: "Software Engineering Intern",
     period: "Jun. 2023 – Aug. 2023",
     description: "Developed 4 features for a mobile app for the company agents, focusing on optimizing client record tracking.",
     skills: ["React Native", "Firebase"]
 }
+
+
 
 // Project data
 export const projects: Project[] = [ 
