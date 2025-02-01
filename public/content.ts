@@ -23,10 +23,10 @@ interface Social {
 // Experience data
 export const exp1: Experience = {
     company: "TekRevol",
-    title: "Backend Engineer",
+    title: "Junior Full-Stack Engineer",
     period: "Aug. 2024 – Present",
-    description: "Programmed an e-commerce backend using MySQL, Node.js, and Adonis.js, managing over 10,000 transactions daily using stripe, and storing images using AWS S3. Contributed to the front-end of a healthcare project using React.js and TailwindCSS, estimated to improve user engagement by 25% and interface performance by 30%.",
-    skills: ["MongoDB", "Express.js", "React.js", "Node.js"]
+    description: "Achievement: Top performing employee for October 2024.\n\nWorked on a trucking app utilizing the MERN stack, integrating Firebase for real-time notifications on the mobile app from the backend. The project included 4 types of role-based users.\n\nProgrammed an e-commerce backend using MySQL, Node.js, and Adonis.js, managing over 10,000 transactions daily using stripe, and storing images using AWS S3.\n\nResearched and developed RAG-based chatbot using FastAPI and LangChain, achieving an average response time below 1 second, significantly enhancing user interaction with real-time data retrieval.",
+    skills: ["MongoDB", "Express.js", "React.js", "Node.js", "FastAPI", "LLMs"]
 }
 
 
@@ -125,6 +125,6 @@ export const github: Social = {
 };
 
 export const resume: Social = {
-    link: "https://drive.google.com/file/d/1PhRhai_cW-QCxJWubkxqk8Xr1hZZ-8sa/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1aJUN0BA4kJ_s8ohBdPxm5FaiNXzADSDu/view?usp=sharing",
 };
 

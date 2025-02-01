@@ -32,7 +32,7 @@ export function Contact() {
                 >
                     an email on zaeemtauqir@hotmail.com
                 </Link>{" "}
-                I&apos;ll respond whenever I can.
+                I&apos;ll respond as soon as I can.
               </p>
             </div>
           </BlurFade>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/portfolio-preview-2.png", // Ensure this URL is correct
+        url: "/portfolio-preview-2.png", 
         width: 630,
         height: 630,
         alt: "Preview Image",
