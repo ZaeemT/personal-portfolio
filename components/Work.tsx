@@ -3,29 +3,24 @@ import BlurFade from "./magicui/blur-fade";
 import ShimmerButton from "./magicui/shimmer-button";
 import { Separator } from "./ui/separator";
 import { FaFilePdf, FaLinkedinIn } from 'react-icons/fa';
-
-
 import { WorkCard } from "./WorkCard";
-
-import { exp1, exp2, exp3, exp4, linkedin, resume } from "@/public/content";
-
-  
+import { exp1, exp2, exp4, linkedin, resume } from "@/public/content";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export function Work() {
 
   return (
-	
     <div className="mx-auto w-full max-w-2xl space-y-4 pt-8 px-4">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <h2 className="text-3xl font-bold tracking-tighter">Work Experience</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <WorkCard company={exp1.company} title={exp1.title} period={exp1.period} description={exp1.description} skills={exp1.skills}/>
-            <WorkCard company={exp2.company} title={exp2.title} period={exp2.period} description={exp2.description} skills={exp2.skills}/>
-            <WorkCard company={exp3.company} title={exp3.title} period={exp3.period} description={exp3.description} skills={exp3.skills}/> 
+			{/* <WorkCard company={exp5.company} title={exp5.title} period={exp5.period} description={exp5.description} skills={exp5.skills}/> */}
             <WorkCard company={exp4.company} title={exp4.title} period={exp4.period} description={exp4.description} skills={exp4.skills}/>            
+            {/* <WorkCard company={exp3.company} title={exp3.title} period={exp3.period} description={exp3.description} skills={exp3.skills}/>  */}
+            <WorkCard company={exp2.company} title={exp2.title} period={exp2.period} description={exp2.description} skills={exp2.skills}/>
+            <WorkCard company={exp1.company} title={exp1.title} period={exp1.period} description={exp1.description} skills={exp1.skills}/>
 
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>

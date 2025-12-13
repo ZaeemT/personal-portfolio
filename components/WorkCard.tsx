@@ -13,12 +13,12 @@ export function WorkCard(props:
         company: string;
         title: string;
         period: string;
-        description: string;
+        description: string[];
         skills: string[];
     }) {
 
     return (
-        <Card className="drop-shadow-lg my-5 text-justify">
+        <Card className="drop-shadow-lg my-5">
             <CardHeader>
                 <div className="flex items-center justify-between gap-x-2 text-base">
                     <CardTitle>{props.company}</CardTitle>
@@ -29,7 +29,11 @@ export function WorkCard(props:
                 <CardDescription>{props.title}</CardDescription>
             </CardHeader>
             <CardContent>
-                <p>{props.description}</p>
+                <ul className="list-disc space-y-2 mx-5">
+                    {props.description.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
             </CardContent>
             <CardFooter className="inline-block group">
                 {props.skills.map((label, i) => {
