@@ -1,5 +1,4 @@
 import BlurFade from "./magicui/blur-fade";
-import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -13,7 +12,7 @@ export function About() {
                 </BlurFade>
                 <BlurFade delay={BLUR_FADE_DELAY * 4}>
                   <div className="prose max-w-full text-pretty text-justify font-sans text-md text-muted-foreground dark:prose-invert">
-                    My name is <span className="text-foreground">Muhammad Zaeem Tauqir</span>, I am a recent Computer Engineering graduate of Ghulam Ishaq Khan Institute (GIKI), with expertise in <span className="text-foreground">Software Development (Web/Mobile), DevOps and Artificial Intelligence</span>. Proven skills in designing and implementing robust solutions using a diverse set of technologies. Eager to contribute innovative ideas and technical proficiency to dynamic projects in the field of technology. Demonstrates strong leadership and communication skills through active collaboration with cross-functional teams.
+                    I am <span className="font-bold text-foreground">Muhammad Zaeem Tauqir</span>, a <em>Computer Engineering</em> graduate from <span className="font-semibold text-foreground">Ghulam Ishaq Khan Institute (GIKI)</span> and an experienced <span className="font-bold text-foreground">Full-Stack Engineer</span> with a proven track record in developing robust solutions. My technical expertise covers the full spectrum of <em>Software Development</em>, <em>DevOps</em>, and <em>Artificial Intelligence</em>, allowing me to deliver innovative and scalable products. A <span className="font-semibold text-foreground">Dean's Honors recipient</span> and recognized <span className="font-semibold text-foreground">top performer</span>, I bring dedicated leadership and active collaboration to every project, aiming to leverage cutting-edge technology for enhanced user experiences.
                   </div>
                 </BlurFade>
             </div>
