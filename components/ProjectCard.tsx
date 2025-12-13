@@ -22,7 +22,7 @@ export function ProjectCard(props:
     }) {
 	const { theme } = useTheme();
 	return (
-		<div className="flex w-full flex-col gap-4 lg:h-[250px] lg:flex-row bg-background">
+		<div className="flex w-full flex-col gap-4 lg:h-[230px] lg:flex-row bg-background">
 			<MagicCard
 				className="flex flex-col border hover:shadow-lg transition-all duration-300 ease-out h-full"
 				gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}

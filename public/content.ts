@@ -75,62 +75,77 @@ export const exp4: Experience = {
 
 // Project data
 export const projects: Project[] = [
-  {
-    title: "IntelliDent",
-    description:
-      "Collaborated with Aga Khan University Hospital, sourcing a dataset of 1000 OPGs. Developed a web app that utilizes ML/DL models for teeth classification and segmentation on Orthopantomograms.",
-    code_link: "#",
-    live_link: "#",
-  },
-  {
-    title: "Workout Buddy",
-    description:
-      "Developed a web application using MERN stack and JWT Authentication, allowing users to record and manage their workouts.",
-    code_link: "https://github.com/ZaeemT/Workout-Tracking",
-    live_link: "https://workout-traking.vercel.app",
-  },
-  {
-    title: "Transparent Background",
-    description:
-      "Created a web application using Flask and leveraging flask sessions, that allows you to remove background from images, and download those transparent images.",
-    code_link: "https://github.com/ZaeemT/Transparent_Background",
-    live_link: "#",
-  },
-  {
-    title: "Product Catalog",
-    description:
-      "Built a product catalog using Next.js with Redux that highlights skills in state management, API-based search static site generation and Next Routing.",
-    code_link: "https://github.com/ZaeemT/Product-catalog",
-    live_link: "https://the-product-catalog.vercel.app/",
-  },
-  {
-    title: "Sign Language Recognition",
-    description:
-      "Recognizes 5 hand signs using custom CNN model and converts it to text and audio. Used Tensorflow and Python.",
-    code_link: "https://github.com/ZaeemT/Sign-Language-Recognition",
-    live_link: "#",
-  },
-  {
-    title: "German Traffic Sign Detector",
-    description:
-      "A custom CNN model detects and classifies various German traffic signs to enhance road safety and automation.",
-    code_link: "https://github.com/ZaeemT/Traffic-Sign-Detector",
-    live_link: "#",
-  },
-  {
-    title: "Today I Learned (TIL)",
-    description:
-      "Built a fully responsive social media website using Django and Tailwind CSS, where users who are authenticated can share their updates regarding their productivity.",
-    code_link: "https://github.com/ZaeemT/TIL",
-    live_link: "#",
-  },
-  {
-    title: "Movie Browser",
-    description:
-      "Programmed a website used to search for movies, and display details of the searched movie. Requested APIs from TMDB, containing data on 864,220 movies.",
-    code_link: "https://github.com/ZaeemT/Movie-Browser",
-    live_link: "#",
-  },
+    {
+        title: "IntelliDent",
+        description:
+            "Web app for teeth classification and segmentation on dental X-rays using ML/DL models, developed in collaboration with Aga Khan University Hospital.",
+        code_link: "#",
+        live_link: "#",
+    },
+    {
+        title: "HR Salary Slip Portal",
+        description:
+            "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
+        code_link: "https://github.com/ZaeemT/hr-salary-slip-portal",
+        live_link: "#",
+    },
+    {
+        title: "Polling App",
+        description:
+            "Real-time polling app with anonymous voting, built with TypeScript and MERN stack, using JWT authentication and Socket.IO.",
+        code_link: "https://github.com/ZaeemT/polling-app",
+        live_link: "#",
+    },
+    {
+        title: "Workout Buddy",
+        description:
+            "MERN stack web app with JWT authentication for users to record and manage workouts.",
+        code_link: "https://github.com/ZaeemT/Workout-Tracking",
+        live_link: "#",
+    },
+    {
+        title: "Transparent Background",
+        description:
+            "Flask web app to remove image backgrounds and download transparent images.",
+        code_link: "https://github.com/ZaeemT/Transparent_Background",
+        live_link: "#",
+    },
+    {
+        title: "Product Catalog",
+        description:
+            "Next.js and Redux product catalog with API-based search, static site generation, and Next Routing.",
+        code_link: "https://github.com/ZaeemT/Product-catalog",
+        live_link: "https://the-product-catalog.vercel.app/",
+    },
+    // Summarized commented projects:
+    // {
+    //   title: "Sign Language Recognition",
+    //   description:
+    //     "CNN-based app recognizing 5 hand signs, converting them to text and audio using Tensorflow and Python.",
+    //   code_link: "https://github.com/ZaeemT/Sign-Language-Recognition",
+    //   live_link: "#",
+    // },
+    // {
+    //   title: "German Traffic Sign Detector",
+    //   description:
+    //     "CNN model for detecting and classifying German traffic signs.",
+    //   code_link: "https://github.com/ZaeemT/Traffic-Sign-Detector",
+    //   live_link: "#",
+    // },
+    // {
+    //   title: "Today I Learned (TIL)",
+    //   description:
+    //     "Responsive social media site for sharing productivity updates, built with Django and Tailwind CSS.",
+    //   code_link: "https://github.com/ZaeemT/TIL",
+    //   live_link: "#",
+    // },
+    // {
+    //   title: "Movie Browser",
+    //   description:
+    //     "Website to search and display movie details using TMDB API.",
+    //   code_link: "https://github.com/ZaeemT/Movie-Browser",
+    //   live_link: "#",
+    // },
 ];
 
 // Socials data
