@@ -4,7 +4,6 @@ const slugs = [
   "typescript",
   "javascript",
   "sql",
-  "php",
   "react",
   "flask",
   "django",
@@ -12,6 +11,7 @@ const slugs = [
   "css3",
   "nodedotjs",
   "express",
+  "nestjs",
   "nextdotjs",
   "python",
   "amazonaws",
@@ -37,11 +37,12 @@ const slugs = [
   "arduino",
   "terraform",
   "linux",
-  "adobephotoshop",
   "adobeillustrator",
   "langchain",
   "huggingface",
-  "openai"
+  "openai",
+  "fastapi",
+  "go"
 ];
 
 export function TechGlobe() {

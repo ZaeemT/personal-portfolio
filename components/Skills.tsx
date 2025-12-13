@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaPython, FaGitAlt, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaNodeJs, FaAws, FaDocker, FaGithub, FaLinux, FaFigma } from 'react-icons/fa'
-import { SiCplusplus, SiTailwindcss, SiMysql, SiNestjs, SiOracle, SiAdonisjs, SiFlask, SiDjango, SiTensorflow, SiFirebase, SiTerraform, SiAdobeillustrator, SiExpress, SiMongodb, SiRedux, SiPostman } from "react-icons/si"
+import { FaGolang } from 'react-icons/fa6';
+import { SiCplusplus, SiTailwindcss, SiMysql, SiGooglecloud, SiFastapi, SiNestjs, SiOracle, SiFlask, SiDjango, SiTensorflow, SiFirebase, SiTerraform, SiAdobeillustrator, SiExpress, SiMongodb, SiRedux, SiPostman } from "react-icons/si"
 import { BiLogoTypescript, BiLogoJavascript, BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 import BlurFade from "./magicui/blur-fade";
@@ -20,6 +21,14 @@ export function Skills() {
                 <div className='grid grid-cols-1 md:grid-cols-5 gap-2 mx-1 my-5'>
                     <div className='text-xl text-muted-foreground self-center font-semibold'>Core Tools</div>
                     <div className='md:col-span-4'>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <FaGolang className='text-background' fontSize="34px" />
+                                <div className='flex-1 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Go</span>
+                                </div>
+                            </div>
+                        </div>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiCplusplus className='text-background' fontSize="34px" />
@@ -164,11 +173,19 @@ export function Skills() {
                                 </div>
                             </div>
                         </div>
-                        <div className='inline-block group'>
+                        {/* <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiDjango className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Django</span>
+                                </div>
+                            </div>
+                        </div> */}
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiFastapi className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>FastAPI</span>
                                 </div>
                             </div>
                         </div>
@@ -229,6 +246,14 @@ export function Skills() {
                                 <FaAws className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiGooglecloud className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>GCP</span>
                                 </div>
                             </div>
                         </div>
