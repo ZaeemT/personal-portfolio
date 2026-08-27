@@ -10,6 +10,15 @@ interface Experience {
   href: string;
 }
 
+interface Education {
+  school: string;
+  href: string;
+  degree: string;
+  logoUrl: string;
+  start: string;
+  end: string;
+}
+
 interface Project {
   title: string;
   description: string;
@@ -81,6 +90,18 @@ export const exp: Experience[] = [
 //     description: ["Leveraged different technologies to conceptualize, create, and launch full-stack web or AI applications to meet client specifications and enhance their business operations.", "Completed over 5 projects, resulting in improved client satisfaction and operational efficiency.", "Delivered projects on time, within scope, and often exceeding client expectations, leading to repeat business and positive referrals."],
 //     skills: ["Flask", "Django", "MongoDB", "Express.js", "React.js", "Node.js"]
 // }
+
+// Education data
+export const education: Education[] = [
+  {
+    school: "Ghulam Ishaq Khan Institute (GIKI)",
+    href: "https://giki.edu.pk/",
+    degree: "Bachelor's Degree in Computer Engineering",
+    logoUrl: "/giki_logo.png",
+    start: "Sept. 2020",
+    end: "Jun. 2024",
+  }
+]
 
 
 // Project data
