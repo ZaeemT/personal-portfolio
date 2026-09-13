@@ -43,19 +43,21 @@ interface Social {
 
 // Experience data
 export const exp: Experience[] = [
-  // {
-  //   company: "Unikrew Solutions (Private) Limited",
-  //   title: "Full-Stack Engineer",
-  //   period: "May. 2025 – Present",
-  //   description: [
-  //     "Engineered a full-stack Incentive Management Module (Python + React) used by MCB Pakistan, automating incentive calculations and reducing manual processing effort by 40%.",
-  //     "Designed and implemented a Developer Integration Portal using Go and React, enabling streamlined access to in-house services (Transliteration, OCR, Facial Comparison, Document Validation, Facial Spoof Check). Improved developer integration time by 60%.",
-  //     "Built a high-performance Go microservice for scraping and updating the Active Taxpayers List (ATL), reducing data refresh time from hours to under 15 minutes and ensuring weekly tax-status accuracy.",
-  //   ],
-  //   skills: ["Go", "Python", "React.js", "AWS", "Docker", "MongoDB"],
-  //   logoUrl: "/unikrew_logo.svg",
-  //   href: "https://www.unikrew.com"
-  // },
+  {
+    company: "Unikrew Solutions (Private) Limited",
+    title: "Full-Stack Engineer",
+    period: "May. 2025 – Present",
+    description: [
+      "Developed an AI voice banking agent by integrating OpenAI and LangChain with a Go backend, enabling users to execute complete banking workflows through natural conversation rather than traditional UI navigation.",
+      "Built a payment gateway with an integrated merchant portal, providing merchants a developer console for API key management and real-time visibility into transactions processed through their business.",
+      "Engineered a full-stack Incentive Management Module (Python + React) used by 2 major banks in Pakistan, automating incentive calculations and reducing manual processing effort by 40%.",
+      // "Designed and implemented a Developer Integration Portal using Go and React, enabling streamlined access to in-house services (Transliteration, OCR, Facial Comparison, Document Validation, Facial Spoof Check). Improved developer integration time by 60%.",
+      "Built a high-performance Go microservice for scraping and updating the Active Taxpayers List (ATL), reducing data refresh time from hours to under 15 minutes and ensuring weekly tax-status accuracy.",
+    ],
+    skills: ["Go", "Python", "React.js", "AWS", "Docker", "MongoDB"],
+    logoUrl: "/unikrew_logo.svg",
+    href: "https://www.unikrew.com"
+  },
   {
     company: "TekRevol",
     title: "Junior Full-Stack Engineer",
@@ -121,7 +123,7 @@ export const education: Education[] = [
 export const projects: Project[] = [
   {
     title: "Education Council",
-    description: "An AI Council system that provides democratic, consensus-based advice of opportunities for future studies.",
+    description: "An AI Council system that provides democratic, consensus-based advice of opportunities for future studies. The system uses a combination of AI Agents and Web scrapers to provide personalized recommendations for students based on their interests, skills, and academic performance.",
     technologies: ["Vite.js", "TypeScript", "Tailwind CSS", "FastAPI", "OpenRouter", "CrewAI", "GCP"],
     image: "/edu-council.png",
   },
@@ -297,5 +299,5 @@ export const github: Social = {
 };
 
 export const resume: Social = {
-  link: "https://drive.google.com/file/d/1aJUN0BA4kJ_s8ohBdPxm5FaiNXzADSDu/view?usp=sharing",
+  link: "https://drive.google.com/file/d/145mKBd3NwiDa4NhNTv2Uo6krXvUSniTh/view?usp=sharing",
 };
