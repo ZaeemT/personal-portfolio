@@ -1,9 +1,11 @@
 import React from 'react'
 import { FaPython, FaGitAlt, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaNodeJs, FaAws, FaDocker, FaGithub, FaLinux, FaFigma } from 'react-icons/fa'
 import { FaGolang } from 'react-icons/fa6';
-import { SiCplusplus, SiTailwindcss, SiMysql, SiGooglecloud, SiFastapi, SiNestjs, SiOracle, SiFlask, SiDjango, SiTensorflow, SiFirebase, SiTerraform, SiAdobeillustrator, SiExpress, SiMongodb, SiRedux, SiPostman } from "react-icons/si"
+import { SiCplusplus, SiTailwindcss, SiRedis, SiGooglecloud, SiFastapi, SiNestjs, SiFlask, SiDjango, SiTensorflow, SiFirebase, SiTerraform, SiExpress, SiMongodb, SiRedux, SiPostman, SiYolo, SiOllama, SiHuggingface, SiLangchain, SiMilvus, SiClaudecode } from "react-icons/si"
 import { BiLogoTypescript, BiLogoJavascript, BiLogoPostgresql } from "react-icons/bi";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandAdobeIllustrator } from "react-icons/tb";
+import { GrOracle } from "react-icons/gr";
+import { RiOpenaiFill } from "react-icons/ri";
 import BlurFade from "./magicui/blur-fade";
 import { TechGlobe } from './TechGlobe';
 
@@ -18,7 +20,7 @@ export function Skills() {
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 6}>
                 <TechGlobe />
-                <div className='grid grid-cols-1 md:grid-cols-5 gap-2 mx-1 my-5'>
+                <div className='grid grid-cols-1 md:grid-cols-5 gap-2 mx-1 my-3'>
                     <div className='text-xl text-muted-foreground self-center font-semibold'>Core Tools</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
@@ -29,14 +31,14 @@ export function Skills() {
                                 </div>
                             </div>
                         </div>
-                        <div className='inline-block group'>
+                        {/* <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <SiCplusplus className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>C++</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaPython className='text-background' fontSize="34px" />
@@ -207,30 +209,82 @@ export function Skills() {
                         </div>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
-                                <SiMysql className='text-background' fontSize="34px" />
+                                <SiRedis className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
-                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>MySQL</span>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Redis</span>
                                 </div>
                             </div>
                         </div>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
-                                <SiOracle className='text-background' fontSize="34px" />
+                                <GrOracle className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>OracleDB</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div className='text-xl text-muted-foreground self-center font-semibold'>AI</div>
+                    <div className='md:col-span-4'>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
-                                <SiFirebase className='text-background' fontSize="34px" />
+                                <SiYolo className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
-                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Firebase</span>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>YOLO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiOllama className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Ollama</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiHuggingface className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Hugging Face</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiLangchain className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>LangChain</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <RiOpenaiFill className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>OpenAI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiTensorflow className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Tensorflow</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiMilvus className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Milvus</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className='text-xl text-muted-foreground self-center font-semibold'>Other Tools</div>
                     <div className='md:col-span-4'>
                         <div className='inline-block group'>
@@ -275,9 +329,9 @@ export function Skills() {
                         </div>
                         <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
-                                <SiTensorflow className='text-background' fontSize="34px" />
+                                <SiClaudecode className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
-                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Tensorflow</span>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Claude Code</span>
                                 </div>
                             </div>
                         </div>
@@ -297,22 +351,30 @@ export function Skills() {
                                 </div>
                             </div>
                         </div>
-                        <div className='inline-block group'>
+                        {/* <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
                                 <FaFigma className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Figma</span>
                                 </div>
                             </div>
-                        </div>
-                        <div className='inline-block group'>
+                        </div> */}
+                        {/* <div className='inline-block group'>
                             <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
-                                <SiAdobeillustrator className='text-background' fontSize="34px" />
+                                <TbBrandAdobeIllustrator className='text-background' fontSize="34px" />
                                 <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
                                     <span className='text-background ml-2 whitespace-nowrap font-bold'>Illustrator</span>
                                 </div>
                             </div>
-                        </div> 
+                        </div> */}
+                        <div className='inline-block group'>
+                            <div className='flex items-center bg-muted-foreground rounded-md p-1 mr-2 transition-all duration-300'>
+                                <SiFirebase className='text-background' fontSize="34px" />
+                                <div className='flex-0 overflow-hidden transition-all duration-300 max-w-0 group-hover:max-w-xs'>
+                                    <span className='text-background ml-2 whitespace-nowrap font-bold'>Firebase</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </BlurFade>

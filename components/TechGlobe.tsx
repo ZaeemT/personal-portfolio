@@ -1,4 +1,4 @@
-import IconCloud from "@/components/magicui/icon-cloud";
+import { IconCloud } from "@/components/magicui/icon-cloud";
 
 const slugs = [
   "typescript",
@@ -28,27 +28,31 @@ const slugs = [
   "github",
   "postman",
   "visualstudiocode",
-  "figma",
+  // "figma",
   "tailwindcss",
   "tensorflow",
   "oracle",
-  "mysql",
+  "redis",
   "mongodb",
   "arduino",
   "terraform",
   "linux",
-  "adobeillustrator",
+  // "adobeillustrator",
   "langchain",
   "huggingface",
   "openai",
   "fastapi",
-  "go"
+  "go",
 ];
 
 export function TechGlobe() {
+  const images = slugs.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+  )
+
   return (
-    <div className="h-full w-full max-w-2xl items-center justify-center overflow-hidden bg-background px-20 pb-20">
-      <IconCloud iconSlugs={slugs} />
+    <div className="h-full w-full max-w-2xl items-center justify-center overflow-hidden bg-background px-20 pb-10">
+      <IconCloud images={images} />
     </div>
   );
 }
