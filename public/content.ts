@@ -1,3 +1,7 @@
+import React from "react";
+import { GlobeIcon, GithubIcon } from "lucide-react";
+
+
 // interfaces
 
 interface Experience {
@@ -21,9 +25,16 @@ interface Education {
 
 interface Project {
   title: string;
+  href?: string;
   description: string;
-  code_link: string;
-  live_link: string;
+  technologies: string[];
+  links?: {
+    icon: React.ReactNode;
+    type: string;
+    href: string;
+  }[];
+  image?: string;
+  video?: string;
 }
 
 interface Social {
@@ -42,6 +53,8 @@ export const exp: Experience[] = [
   //     "Built a high-performance Go microservice for scraping and updating the Active Taxpayers List (ATL), reducing data refresh time from hours to under 15 minutes and ensuring weekly tax-status accuracy.",
   //   ],
   //   skills: ["Go", "Python", "React.js", "AWS", "Docker", "MongoDB"],
+  //   logoUrl: "/unikrew_logo.svg",
+  //   href: "https://www.unikrew.com"
   // },
   {
     company: "TekRevol",
@@ -107,47 +120,138 @@ export const education: Education[] = [
 // Project data
 export const projects: Project[] = [
   {
-    title: "IntelliDent",
-    description:
-      "Web app for teeth classification and segmentation on dental X-rays using ML/DL models, developed in collaboration with Aga Khan University Hospital.",
-    code_link: "#",
-    live_link: "#",
+    title: "Education Council",
+    description: "An AI Council system that provides democratic, consensus-based advice of opportunities for future studies.",
+    technologies: ["Vite.js", "TypeScript", "Tailwind CSS", "FastAPI", "OpenRouter", "CrewAI", "GCP"],
+    image: "/edu-council.png",
   },
+  {
+    title: "AI Voice Banking Assistant",
+    description: "Developed an AI-powered bilingual voice banking agent, enabling customers to navigate banking services and complete workflows through natural conversation; implemented RAG-based question answering for company policies and general queries, alongside intent-based dynamic screen navigation in English and Urdu.",
+    technologies: ["LLMs", "LangChain", "AWS"],
+    image: "/voice-agent.png",
+  },
+  {
+    title: "Azure Properties",
+    description: "Developed a full-stack real estate platform for residential and commercial properties, enabling users to search, view, and book properties for rent or sale, with integrated viewing appointment scheduling.",
+    technologies: ["React.js", "Node.js", "Drizzle", "PostgreSQL"],
+    href: "https://azureproperties.ae/",
+    video: "/azure-prop.mp4",
+    links: [
+      {
+        type: "Website",
+        href: "https://azureproperties.ae/",
+        icon: React.createElement(GlobeIcon, { className: "size-3" }),
+      },
+    ]
+  },
+  {
+    title: "Myndify",
+    description: "Engineered the backend architecture for MYNDIFY, powering a personal “second brain” platform with record management, contextual notes, task tracking, smart reminders, media uploads, search, and user data management, supporting interconnected information across people, places, and events.",
+    technologies: ["Nest.js", "MongoDB", "AWS"],
+    href: "https://myndifyapp.com/",
+    image: "/myndify.png", 
+    links: [
+      {
+        type: "Website",
+        href: "https://myndifyapp.com/",
+        icon: React.createElement(GlobeIcon, { className: "size-3" }),
+      },
+    ]
+  },
+  // {
+  //   title: "WM Trucking",
+  //   dates: "2024",
+  //   description: "Collaborated on a trucking app utilizing the MERN stack and integrated Firebase for real-time notifications on the mobile app from the backend. The project included 4 types of role-based users.",
+  //   technologies: ["Node.js", "MongoDB", "Firebase"],
+  //   href: "https://www.wmtrucking.net/",
+  //   image: "/wm-truck.png",
+  //   links: [
+  //     {
+  //       type: "Website",
+  //       href: "https://www.wmtrucking.net/",
+  //       icon: React.createElement(GlobeIcon, { className: "size-3" }),
+  //     },
+  //   ]
+  // },
   {
     title: "HR Salary Slip Portal",
-    description:
-      "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
-    code_link: "https://github.com/ZaeemT/hr-salary-slip-portal",
-    live_link: "#",
+    description: "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
+    technologies: ["Python", "React.js", "FastAPI", "MongoDB"],
+    href: "https://github.com/ZaeemT/hr-salary-slip-portal",
+    video: "https://github.com/user-attachments/assets/47c31b65-644f-4cc5-90b5-da7bcb8a0d1e",
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/ZaeemT/hr-salary-slip-portal",
+        icon: React.createElement(GithubIcon, { className: "size-3" }),
+      },
+    ]
   },
+  // {
+  //   title: "Developer Integration Portal",
+  //   dates: "2025",
+  //   description: "Designed and implemented a Developer Integration Portal using Go and React, enabling streamlined access to in-house services (Transliteration, OCR, Facial Comparison, Document Validation, Facial Spoof Check). Improved developer integration time by 60\\%.",
+  //   technologies: ["Go", "React.js", "MongoDB", "Postman"],
+  //   video: "#",
+  // },
   {
     title: "Polling App",
-    description:
-      "Real-time polling app with anonymous voting, built with TypeScript and MERN stack, using JWT authentication and Socket.IO.",
-    code_link: "https://github.com/ZaeemT/polling-app",
-    live_link: "#",
-  },
-  {
-    title: "Workout Buddy",
-    description:
-      "MERN stack web app with JWT authentication for users to record and manage workouts.",
-    code_link: "https://github.com/ZaeemT/Workout-Tracking",
-    live_link: "#",
-  },
-  {
-    title: "Transparent Background",
-    description:
-      "Flask web app to remove image backgrounds and download transparent images.",
-    code_link: "https://github.com/ZaeemT/Transparent_Background",
-    live_link: "#",
-  },
-  {
-    title: "Product Catalog",
-    description:
-      "Next.js and Redux product catalog with API-based search, static site generation, and Next Routing.",
-    code_link: "https://github.com/ZaeemT/Product-catalog",
-    live_link: "https://the-product-catalog.vercel.app/",
-  },
+    description: "Real-time polling app with anonymous voting, built with TypeScript and MERN stack, using JWT authentication and Socket.IO.",
+    technologies: ["TypeScript", "Node.js", "Vite.js", "Socket.IO", "MongoDB"],
+    href: "https://github.com/ZaeemT/polling-app",
+    video: "https://github.com/user-attachments/assets/cd8cb8f2-c22c-4a9f-bd28-18c190628310",
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/ZaeemT/polling-app",
+        icon: React.createElement(GithubIcon, { className: "size-3" }),
+      },
+    ]
+  }
+
+  // {
+  //   title: "IntelliDent",
+  //   description:
+  //     "Web app for teeth classification and segmentation on dental X-rays using ML/DL models, developed in collaboration with Aga Khan University Hospital.",
+  //   code_link: "#",
+  //   live_link: "#",
+  // },
+  // {
+  //   title: "HR Salary Slip Portal",
+  //   description:
+  //     "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
+  //   code_link: "https://github.com/ZaeemT/hr-salary-slip-portal",
+  //   live_link: "#",
+  // },
+  // {
+  //   title: "Polling App",
+  //   description:
+  //     "Real-time polling app with anonymous voting, built with TypeScript and MERN stack, using JWT authentication and Socket.IO.",
+  //   code_link: "https://github.com/ZaeemT/polling-app",
+  //   live_link: "#",
+  // },
+  // {
+  //   title: "Workout Buddy",
+  //   description:
+  //     "MERN stack web app with JWT authentication for users to record and manage workouts.",
+  //   code_link: "https://github.com/ZaeemT/Workout-Tracking",
+  //   live_link: "#",
+  // },
+  // {
+  //   title: "Transparent Background",
+  //   description:
+  //     "Flask web app to remove image backgrounds and download transparent images.",
+  //   code_link: "https://github.com/ZaeemT/Transparent_Background",
+  //   live_link: "#",
+  // },
+  // {
+  //   title: "Product Catalog",
+  //   description:
+  //     "Next.js and Redux product catalog with API-based search, static site generation, and Next Routing.",
+  //   code_link: "https://github.com/ZaeemT/Product-catalog",
+  //   live_link: "https://the-product-catalog.vercel.app/",
+  // },
   // Summarized commented projects:
   // {
   //   title: "Sign Language Recognition",

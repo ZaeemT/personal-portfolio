@@ -37,10 +37,15 @@ export function Projects() {
 						delay={BLUR_FADE_DELAY * 12 + id * 0.05}
 					>
 						<ProjectCard
-						title={project.title}
-						description={project.description}
-						code_link={project.code_link}
-						live_link={project.live_link}
+							href={project.href}
+							key={project.title}
+							title={project.title}
+							description={project.description}
+							// dates={project.dates}
+							tags={project.technologies}
+							image={project.image}
+							video={project.video}
+							links={project.links}
 						/>
 					</BlurFade>
             	))}
@@ -52,8 +57,8 @@ export function Projects() {
 						target="_blank"
 						>
 						<ShimmerButton className="shadow-2xl" borderRadius="50px">
-							<FaGithub className="size-5 text-white mr-2" />
-							<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
+							<FaGithub className="size-3 text-white mr-2" />
+							<span className="whitespace-pre-wrap text-center text-xs font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
 								View my Github profile
 							</span>
 						</ShimmerButton>	
