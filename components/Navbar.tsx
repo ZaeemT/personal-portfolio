@@ -7,7 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 
-import { github, email, linkedin, resume } from "@/public/content";
+import { github, email, linkedin, resume } from "@/public/resume";
 import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf } from 'react-icons/fa';
 import { ModeToggle } from "./mode-toggle";
 import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from "./ui/tooltip";

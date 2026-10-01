@@ -13,7 +13,7 @@ import BlurFade from "./magicui/blur-fade";
 import ShimmerButton from "./magicui/shimmer-button";
 import { FaFilePdf, FaLinkedinIn } from "react-icons/fa";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { exp, linkedin, resume } from "@/public/content";
+import { exp, linkedin, resume } from "@/public/resume";
 
 const BLUR_FADE_DELAY = 0.04;
 
