@@ -72,7 +72,7 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
       <pre
         ref={preRef}
         {...props}
-        className={cn("p-0! m-0! overflow-x-auto", props.className)}
+        className={cn("!p-0 !m-0 overflow-x-auto", props.className)}
       >
         {title && (
           <div className="p-3 text-xs font-medium border-b border-border rounded-t-xl bg-muted/50 text-foreground">

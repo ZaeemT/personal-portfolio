@@ -26,7 +26,7 @@ export const mdxComponents = {
     <div className="my-6 border border-border rounded-xl overflow-hidden">
       <div className="w-full overflow-x-auto">
         <table
-          className="m-0! w-full min-w-full border-separate border-spacing-0"
+          className="!m-0 w-full min-w-full border-separate border-spacing-0"
           {...props}
         />
       </div>
