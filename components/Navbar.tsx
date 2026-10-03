@@ -20,7 +20,7 @@ export function Navbar() {
       <TooltipProvider>
       <IntroChrome className="w-full">
 
-        <Dock direction="middle">
+        <Dock direction="middle" className="bg-card/90 backdrop-blur-3xl border shadow-primary/10">
 
             <DockIcon>
                 <Tooltip>
