@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import BlurFade from "./magicui/blur-fade"
-import { education } from "@/public/content"
+import { education } from "@/public/resume"
 
 const BLUR_FADE_DELAY = 0.04;
 

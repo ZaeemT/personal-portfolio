@@ -4,7 +4,7 @@ import ShimmerButton from "./magicui/shimmer-button";
 import { FaGithub, FaFilePdf } from "react-icons/fa";
 
 import { ProjectCard } from "./ProjectCard";
-import { projects, github } from "@/public/content";
+import { projects, github } from "@/public/resume";
 
 
 const BLUR_FADE_DELAY = 0.04;

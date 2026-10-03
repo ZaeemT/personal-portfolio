@@ -7,8 +7,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 
-import { github, email, linkedin, resume } from "@/public/content";
-import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf } from 'react-icons/fa';
+import { github, email, linkedin, resume } from "@/public/resume";
+import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf, FaHome, FaBook } from 'react-icons/fa';
 import { ModeToggle } from "./mode-toggle";
 import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from "./ui/tooltip";
 
@@ -19,6 +19,51 @@ export function Navbar() {
       <TooltipProvider>
 
         <Dock direction="middle">
+
+            <DockIcon>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Link
+                            href={"/"}
+                            // target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                                buttonVariants({ variant: "ghost", size: "icon" }),
+                                "size-12 rounded-full",
+                                )}
+                                >
+                            <FaHome className="size-6" />
+                        </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Home</p>
+                    </TooltipContent>
+                </Tooltip>
+            </DockIcon>
+
+            <DockIcon>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Link
+                            href={"/blog"}
+                            // target="_blank"
+                            // rel="noopener noreferrer"
+                            className={cn(
+                                buttonVariants({ variant: "ghost", size: "icon" }),
+                                "size-12 rounded-full",
+                                )}
+                                >
+                            <FaBook className="size-5" />
+                        </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Blog</p>
+                    </TooltipContent>
+                </Tooltip>
+            </DockIcon>
+
+            <Separator orientation="vertical" className="h-full py-2" />
+
 
             <DockIcon>
                 <Tooltip>

@@ -27,10 +27,17 @@
     "react-icon-cloud": "^4.1.4",
     "react-icons": "^5.7.0",
     "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.1",
+    "shiki": "^4.5.0",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.15.3",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/next": "^0.2.11",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
