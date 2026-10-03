@@ -6,7 +6,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/Navbar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemedFlickeringGrid } from "@/components/ui/themed-flickering-grid";
+import { IntroProvider } from "@/components/intro/intro-context";
+import { Preloader } from "@/components/intro/Preloader";
+import { INTRO_STORAGE_KEY } from "@/lib/intro";
 import { cn } from "@/lib/utils";
+
+// Runs before first paint so a returning visitor never sees the curtain.
+const introScript = `try{if(sessionStorage.getItem(${JSON.stringify(INTRO_STORAGE_KEY)})==="seen")document.documentElement.dataset.intro="seen"}catch(e){}`;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: introScript }} />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
@@ -52,6 +61,8 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
+          <IntroProvider>
+          <Preloader />
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
               <ThemedFlickeringGrid
@@ -69,6 +80,7 @@ export default function RootLayout({
             </div>
             <Navbar />
           </TooltipProvider>
+          </IntroProvider>
         </ThemeProvider>
         <ClarityInit />
       </body>

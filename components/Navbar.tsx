@@ -10,6 +10,7 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import { github, email, linkedin, resume } from "@/public/resume";
 import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf, FaHome, FaBook } from 'react-icons/fa';
 import { ModeToggle } from "./mode-toggle";
+import { IntroChrome } from "./intro/IntroChrome";
 import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from "./ui/tooltip";
 
 export function Navbar() {
@@ -17,6 +18,7 @@ export function Navbar() {
     <div className="fixed inset-x-0 bottom-8 z-30 mx-auto mb-5 flex origin-bottom h-full max-h-14">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
       <TooltipProvider>
+      <IntroChrome className="w-full">
 
         <Dock direction="middle">
 
@@ -152,6 +154,7 @@ export function Navbar() {
             </DockIcon>
                     
         </Dock>
+      </IntroChrome>
       </TooltipProvider>
 
     </div>

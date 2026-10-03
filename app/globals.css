@@ -358,3 +358,23 @@
     @apply bg-background text-foreground;
   }
 }
+/* Intro curtain. Letters sit below their line until GSAP takes over. */
+[data-preloader-letter] {
+  transform: translateY(110%);
+}
+
+html[data-intro="seen"] [data-preloader] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-preloader] {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-intro="seen"]) {
+    overflow: hidden;
+  }
+}
