@@ -1,6 +1,6 @@
 import BlurFade from "./magicui/blur-fade";
 import Link from "next/link";
-import { linkedin, email, github } from "@/public/content";
+import { linkedin, email, github } from "@/public/resume";
 
 const BLUR_FADE_DELAY = 0.04;
 
