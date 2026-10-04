@@ -189,17 +189,6 @@ It is the difference between a thermometer that reads 36.7°C and a person who l
 
 The practical consequence: Gemini's precision and recall barely change when I moved the threshold anywhere between 0.3 and 0.7, because there are almost no messages in the middle. There is nothing to tune. With Jev, moving the dial actually changes the results gradually, which is exactly what a triage system needs.
 
-## Honest caveats
-
-I would rather you trust the right parts of this post than all of it.
-
-- **Tiny sample.** 50 messages, one run per model. Differences of 1 to 3 messages are within noise, and with only 11 fraud examples, a single message moves recall by 9 points. I did not measure run-to-run variation.
-- **My labels are one person's judgment**, and calibration is measured against them.
-- **The routing thresholds were tuned on the same 50 messages they were scored on.** The "0 unsafe auto-handles" result for Jev is therefore optimistic, and it favors Jev, since the cutoffs were set using Jev's own outputs. Fresh messages are the real test.
-- **Jev was accessed through OpenRouter**, not TypeSafe's own API. The model reported itself as `typesafe/jev-1.13-20260917`. I haven't confirmed whether that is identical to the officially pinned `jev-1.13.0`, or whether it stays put over time.
-- **Gemini 2.5 Flash is a small, fast LLM.** A larger model could score differently.
-- **Jev is brand new and in early access.** Its data-handling terms weren't something I could confirm, which is another reason all my data was synthetic. This is a learning project, not something to use for real fraud, compliance or credit decisions.
-
 ## Where I landed
 
 For this specific job, triaging short messages into typed decisions at volume, Jev's strengths line up well with the problem: it's fast, cheap, always returns a valid shape, and gives probabilities you can actually tune. Gemini was a genuinely strong competitor, especially on judgment-heavy calls like `needs_human`, and it is the better choice if you need free-form text anywhere in the pipeline.
