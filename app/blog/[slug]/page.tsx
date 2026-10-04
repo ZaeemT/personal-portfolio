@@ -135,6 +135,18 @@ export default async function Blog({
         <p className="text-sm text-muted-foreground">
           {formatDate(post.publishedAt)}
         </p>
+        {post.tags && post.tags.length > 0 && (
+          <ul className="flex flex-wrap gap-2" aria-label="Tags">
+            {post.tags.map((tag) => (
+              <li
+                key={tag}
+                className="bg-card border border-border rounded-md px-2 py-0.5 text-xs text-muted-foreground"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className="my-6 flex w-full items-center">
         <div
