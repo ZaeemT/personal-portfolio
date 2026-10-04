@@ -1,0 +1,216 @@
+---
+title: "I Built a Support-Message Triager with Jev, Then Raced It Against an LLM"
+summary: "A hands-on learning project with TypeSafe's new System One model: what it is, how I tested it on 50 messages, and how it compared with Gemini 2.5 Flash on accuracy, speed, cost and trustworthy probabilities."
+publishedAt: "2026-10-04"
+author: "Zaeem Tauqir"
+tags: ["Jev", "LLM", "FastAPI", "fintech"]
+---
+
+Most AI news is about models that talk. **Jev**, released in early access by TypeSafe AI on September 15, 2026, doesn't talk at all. It answers questions with **numbers**: "92% yes", "most likely category: billing". That makes it an unusual tool, and I wanted to find out what it is actually good for.
+
+So I built something small with it: a **triager for fintech customer-support messages**. Then I ran the same job through a general-purpose LLM (Google's Gemini 2.5 Flash) and compared the two.
+
+> **In summary**
+>
+> - On my 50-message test, Jev was about **4x faster** and about **7.5x cheaper** per message, and it picked the right **category** more often (96% vs 88%).
+> - Gemini did better on one judgment call ("does a human need to handle this?"), and it caught more fraud at the default cutoff.
+> - The biggest difference was in the **probabilities**. Jev's are *computed* and spread across the range, so you can tune them. Gemini's are *written out* by the model and bunch up at 0 and 1, so there is little to tune.
+
+## The problem: a support inbox is a mix of fires and paperwork
+
+Imagine a fintech company's support inbox. Three messages arrive:
+
+- "Someone took $480 out of my account last night."
+- "How do I download last month's statement?"
+- "locked out"
+
+The first needs a human **right now**. The second can be answered by a help-center article. The third is too vague to tell. A triage system has to decide, for every message: **answer automatically, put it in a review queue, or escalate immediately**.
+
+There are two ways to get this wrong, and they pull in opposite directions:
+
+- **Miss a risky message**, and money keeps leaving an account while the message sits in a queue.
+- **Escalate everything**, and the people handling real emergencies drown in noise.
+
+Real messages are also messy: very short, sarcastic, written in non-native English, mentioning "fraud" without being about fraud, or raising two issues at once.
+
+## What Jev is (and why it's different from a chatbot)
+
+TypeSafe calls Jev a **System One model**, a nod to Daniel Kahneman's "fast thinking" from *Thinking, Fast and Slow*. You give it some content (a customer message, say) plus a set of **typed questions**. It evaluates all of them in parallel and returns structured answers with probabilities. No paragraphs. Nothing to parse.
+
+A chatbot is like a writer who sends you a letter you then have to read and interpret. Jev is like a clerk who hands back a filled-in form with percentages on it. Software can use the form directly.
+
+There are three kinds of question, called *primitives*:
+
+| Primitive | What it asks | What comes back |
+|---|---|---|
+| `noul` | A yes/no question | One number: the probability of "yes" |
+| `choice` | Pick one option from a list | A probability for every option, plus the top pick |
+| `score` | Rate on an ordered scale (like low / medium / high) | A probability for every level, plus an average score |
+
+A detail that tripped me up at first: a `score` is an **expected value**. If Jev says urgency is 1.45 on a 0-1-2 scale, it doesn't mean "level 1.45". It means the probability is split between medium and high. Always look at the split.
+
+## What I built
+
+For every message, the triager sends **one request** to Jev with **four questions**:
+
+| Question | Type | Plain-English meaning |
+|---|---|---|
+| `category` | choice | What is this mostly about? (unauthorized charge, billing question, account access, card issue, other) |
+| `urgency` | score | How soon does it need a response? (0 low, 1 medium, 2 high) |
+| `fraud_related` | noul | Does the customer *suspect* someone else used their account, card or money? |
+| `needs_human` | noul | Should a person handle this instead of an automated reply? |
+
+Those answers then go through a **routing layer** that decides what to do. This layer is deliberately *not* AI. It is plain, predictable rules:
+
+```text
+customer message
+       │
+       ▼
+Jev: one request, four typed questions
+       │
+       ▼
+Routing layer
+  1. Backstop rules (work even if Jev is down)
+  2. Probability thresholds (tuned on test data)
+       │
+       ▼
+auto_handle  |  review  |  escalate
+```
+
+**The backstop rules** run first and need no model at all: if the Jev call fails, send to review; if the message contains words like "unauthorized", "stolen" or "hacked", escalate; if it is three words or fewer, send to review.
+
+**The thresholds** then apply: `fraud_related` at or above 0.25 escalates, `needs_human` at or above 0.20 goes to review, and so on. The most severe action wins, and the API returns every reason that fired.
+
+Think of it as a smoke alarm with a sensitivity dial. Set it too high and a house fire goes unnoticed. Set it too low and it screams every time you make toast. Picking the dial setting is the real design work.
+
+I wrapped it all in a small FastAPI endpoint, `POST /v1/triage/`. Here is a trimmed example of what it returns:
+
+```json
+{
+  "action": "escalate",
+  "reasons": ["fraud_related 0.37 >= 0.25", "needs_human 0.9 >= 0.2"],
+  "model_ok": true,
+  "answers": {
+    "category": { "label": "unauthorized_charge", "confidence": 0.96 },
+    "urgency": { "score": 1.15, "most_likely_level": 1 },
+    "fraud_related": 0.37,
+    "needs_human": 0.9
+  },
+  "latency_ms": 364
+}
+```
+
+If Jev fails (timeout, rate limit, bad response), the API still responds. It sets `model_ok: false` and falls back to the backstop rules only. No retries, no invented values.
+
+## How I tested it
+
+- **50 synthetic messages**, all invented. No real customer data anywhere in the project.
+- Deliberately **hard cases**: very short messages, sarcasm, non-native English, "fraud" mentioned but not the issue, hedged language ("maybe my partner used my card?"), two issues in one message.
+- **I labeled them by hand before running any model**, and froze the dataset so I couldn't nudge the answers toward what the model said.
+- Both models got the **same question wording**. Jev received it as four typed questions. Gemini received it as one prompt with a strict JSON format, at temperature 0 (the setting that makes a model as consistent as possible).
+
+## A quick glossary before the results
+
+| Term | Plain English | Why it matters here |
+|---|---|---|
+| **Precision** | When the alarm rings, how often is there really a fire? | Low precision means lots of false alarms. |
+| **Recall** | Of all the real fires, how many did the alarm catch? | Low recall means missed emergencies. |
+| **Threshold** | The cutoff probability that triggers an action ("escalate at 25% or more"). | The dial on the smoke alarm. |
+| **Calibration** | Do the percentages mean what they say? Of everything called "80% likely", do about 80% turn out true? | A model can be accurate and still give misleading percentages. |
+| **Brier score** | A report card for probabilities. For each message, take the gap between the predicted probability and what happened (1 or 0), square it, and average. **Lower is better**, and 0 is perfect. | Predict 0.9 and be right: penalty of 0.01. Predict 0.9 and be wrong: penalty of 0.81. Confident mistakes hurt most. |
+| **Base rate** | How common the thing is overall. | 74% of my messages needed a human, so a model that always said "yes" would score 74% accuracy while being useless. |
+| **Latency** | How long one answer takes. | Matters when customers are waiting. |
+
+One more useful yardstick: a **do-nothing baseline**. If you always guessed the base rate, the Brier score would be 0.172 for `fraud_related` and 0.192 for `needs_human`. Anything well below that means the probabilities carry real information.
+
+## Results: Jev vs Gemini 2.5 Flash
+
+Same 50 messages, one run each. Jev was reached through OpenRouter (more on that in the caveats).
+
+| Metric | Jev 1.13 | Gemini 2.5 Flash |
+|---|---|---|
+| Category accuracy | **0.96** (48/50) | 0.88 (44/50) |
+| Urgency accuracy | 0.90 | 0.90 |
+| `fraud_related` at 0.5: precision / recall | 0.89 / 0.73 | 0.79 / 1.00 |
+| `fraud_related` Brier (lower is better) | 0.046 | 0.049 |
+| `needs_human` at 0.5: precision / recall | 0.91 / 0.86 | 0.92 / 0.97 |
+| `needs_human` Brier (lower is better) | 0.099 | **0.077** |
+| Latency per message: median / max | **0.40 s** / 1.16 s | 1.65 s / 2.97 s |
+| Cost per message | **$0.00003** | $0.000225 |
+| Cost for all 50 messages | **$0.0015** | $0.0113 |
+
+### Reading the table without a statistics degree
+
+- **Speed and cost clearly favor Jev.** About 4x faster at the median and about 7.5x cheaper. Back-of-the-envelope: a million messages would cost roughly $30 with Jev and $225 with Gemini at these rates. That holds even though Jev reads more text per message (720 input tokens vs 451), because its per-token price is much lower.
+- **Category accuracy favors Jev.** Five of Gemini's six misses were messages that belonged in `other` but got forced into a specific label. Gemini seems reluctant to say "none of the above."
+- **Urgency is a tie.**
+- **Fraud is a trade-off, not a win.** At the 0.5 cutoff, Gemini caught every fraud case (recall 1.00) but raised more false alarms (precision 0.79). Jev was stricter: fewer false alarms, but it missed 3 of 11 frauds. Lowering Jev's cutoff to 0.3 recovers 2 of those 3 at the cost of one extra false alarm. That is the dial at work.
+- **Gemini was better on `needs_human`.** Its judgment lined up more closely with my cautious labeling (I marked 74% of messages as needing a human).
+
+## Reading the reliability diagrams
+
+This is the part that surprised me most, so here is how to read these charts.
+
+> **How to read a reliability diagram**
+>
+> - **Left-to-right (x-axis):** what the model *said*. "I'm 80% sure."
+> - **Bottom-to-top (y-axis):** what *actually happened*. Of all the messages where it said about 80%, what fraction really were "yes"?
+> - **The dashed diagonal line** is perfection: when the model says 80%, it is right 80% of the time.
+> - **Dots above the line** mean the model was *underconfident* (it said 60%, reality was 100%).
+> - **Dots below the line** mean it was *overconfident* (it said 98%, reality was 82%).
+> - **The "n=" labels** show how many messages fell in each dot. Tiny n means a shaky dot, because one message can swing it by 20 to 50 points.
+
+### Jev
+
+![Reliability diagrams for Jev 1.13, showing fraud_related (Brier 0.046) on the left and needs_human (Brier 0.099) on the right](/blog-imgs/jev-reliability.png)
+
+**Left chart, `fraud_related`.** The two biggest dots tell the story. Of the 29 messages Jev scored below 0.1, **none** were fraud. Of the 6 it scored above 0.9, **all** were fraud. The dots in between hold only 1 to 4 messages each, so I wouldn't read much into their wiggles. The line follows the diagonal reasonably well, and the Brier score of 0.046 is almost 4 times better than the do-nothing baseline of 0.172.
+
+**Right chart, `needs_human`.** The line zigzags and mostly sits *above* the diagonal. Jev's probabilities came out lower than how often I said "human needed." For example, in the 0.4-0.5 and 0.6-0.7 groups, every message was labeled yes. Part of that is Jev, and part of it is my labeling policy: I was a cautious labeler, and calibration is always measured against *someone's* labels. The Brier score of 0.099 still roughly halves the baseline of 0.192.
+
+**The important property:** Jev's probabilities spread smoothly across the whole 0 to 1 range, with a lot of values in the middle. That is what makes threshold tuning possible.
+
+### Gemini 2.5 Flash
+
+![Reliability diagrams for Gemini 2.5 Flash, showing fraud_related (Brier 0.049) on the left and needs_human (Brier 0.077) on the right](/blog-imgs/gemini-reliability.png)
+
+**Left chart, `fraud_related`.** Look at how few dots there are. Gemini put **33 of 50** messages at exactly 0.0, and most of the rest at about 0.8 to 1.0. When it said roughly 0.98 (11 messages), the fraud was real only **82%** of the time. It is **overconfident** at the top, and the line sits below the diagonal.
+
+**Right chart, `needs_human`.** This one is good where it counts. The 31 messages near 0.98 were really "human needed" 97% of the time, hugging the diagonal. The odd spots (like the single message at 0.5) have n=1 or n=3, so they are noise rather than a pattern. The Brier score of 0.077 beats Jev's.
+
+### Why the shapes differ: computed vs stated probabilities
+
+This is the deepest difference between the two approaches.
+
+- **Jev computes its probabilities.** They come out of the model as part of how it works, so they land anywhere from 0.01 to 0.99.
+- **An LLM writes its probabilities.** Gemini generates a number the same way it generates any text. It tends to pick tidy values in 0.1 steps and gravitates toward 0 and 1.
+
+It is the difference between a thermometer that reads 36.7°C and a person who looks at you and says "you seem fine, so... zero fever." The person may be right most of the time, but you can't use that answer to decide how worried to be about a borderline case.
+
+The practical consequence: Gemini's precision and recall barely change when I moved the threshold anywhere between 0.3 and 0.7, because there are almost no messages in the middle. There is nothing to tune. With Jev, moving the dial actually changes the results gradually, which is exactly what a triage system needs.
+
+## Honest caveats
+
+I would rather you trust the right parts of this post than all of it.
+
+- **Tiny sample.** 50 messages, one run per model. Differences of 1 to 3 messages are within noise, and with only 11 fraud examples, a single message moves recall by 9 points. I did not measure run-to-run variation.
+- **My labels are one person's judgment**, and calibration is measured against them.
+- **The routing thresholds were tuned on the same 50 messages they were scored on.** The "0 unsafe auto-handles" result for Jev is therefore optimistic, and it favors Jev, since the cutoffs were set using Jev's own outputs. Fresh messages are the real test.
+- **Jev was accessed through OpenRouter**, not TypeSafe's own API. The model reported itself as `typesafe/jev-1.13-20260917`. I haven't confirmed whether that is identical to the officially pinned `jev-1.13.0`, or whether it stays put over time.
+- **Gemini 2.5 Flash is a small, fast LLM.** A larger model could score differently.
+- **Jev is brand new and in early access.** Its data-handling terms weren't something I could confirm, which is another reason all my data was synthetic. This is a learning project, not something to use for real fraud, compliance or credit decisions.
+
+## Where I landed
+
+For this specific job, triaging short messages into typed decisions at volume, Jev's strengths line up well with the problem: it's fast, cheap, always returns a valid shape, and gives probabilities you can actually tune. Gemini was a genuinely strong competitor, especially on judgment-heavy calls like `needs_human`, and it is the better choice if you need free-form text anywhere in the pipeline.
+
+One idea I haven't tested: use Jev as the high-volume first pass and route its uncertain cases (probabilities in the middle) to a larger LLM or a human. That is speculation on my part, but it follows from what the diagrams show about where each model is trustworthy.
+
+If you try something similar, my advice is:
+
+1. **Label your own test data first**, and freeze it before running any model.
+2. **Check calibration, not just accuracy.** A model can be right most of the time and still give you useless percentages.
+3. **Keep a deterministic safety net** that works when the model doesn't.
+4. **Re-test your thresholds on messages the model has never seen.**
+
+The full code, the 50-message dataset, the saved run files and the evaluation scripts are in the project repository: **https://github.com/ZaeemT/fintech-support-message-triager**.
