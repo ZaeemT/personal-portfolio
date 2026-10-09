@@ -122,6 +122,20 @@ export const education: Education[] = [
 // Project data
 export const projects: Project[] = [
   {
+    title: "Fintech Support Message Triager",
+    description: "A FastAPI service that reads a customer support message and routes it to auto-handle, review or escalate. It uses Jev, a new System One model that returns typed probabilities, plus a deterministic safety layer that still works if the model fails. I evaluated it on 50 hand-labeled synthetic messages and compared it with an LLM baseline.",
+    technologies: ["Jev", "LLM", "FastAPI", "OpenRouter", "pytest"],
+    href: "https://github.com/ZaeemT/fintech-support-message-triager",
+    video: "https://github.com/user-attachments/assets/f02d7a84-9181-40c7-8fab-96bdcd45810b",
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/ZaeemT/fintech-support-message-triager",
+        icon: React.createElement(GithubIcon, { className: "size-3" }),
+      },
+    ]
+  },
+  {
     title: "Education Council",
     description: "An AI Council system that provides democratic, consensus-based advice of opportunities for future studies. The system uses a combination of AI Agents and Web scrapers to provide personalized recommendations for students based on their interests, skills, and academic performance.",
     technologies: ["Vite.js", "TypeScript", "Tailwind CSS", "FastAPI", "OpenRouter", "CrewAI", "GCP"],
@@ -176,20 +190,20 @@ export const projects: Project[] = [
   //     },
   //   ]
   // },
-  {
-    title: "HR Salary Slip Portal",
-    description: "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
-    technologies: ["Python", "React.js", "FastAPI", "MongoDB"],
-    href: "https://github.com/ZaeemT/hr-salary-slip-portal",
-    video: "https://github.com/user-attachments/assets/47c31b65-644f-4cc5-90b5-da7bcb8a0d1e",
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/ZaeemT/hr-salary-slip-portal",
-        icon: React.createElement(GithubIcon, { className: "size-3" }),
-      },
-    ]
-  },
+  // {
+  //   title: "HR Salary Slip Portal",
+  //   description: "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
+  //   technologies: ["Python", "React.js", "FastAPI", "MongoDB"],
+  //   href: "https://github.com/ZaeemT/hr-salary-slip-portal",
+  //   video: "https://github.com/user-attachments/assets/47c31b65-644f-4cc5-90b5-da7bcb8a0d1e",
+  //   links: [
+  //     {
+  //       type: "Source",
+  //       href: "https://github.com/ZaeemT/hr-salary-slip-portal",
+  //       icon: React.createElement(GithubIcon, { className: "size-3" }),
+  //     },
+  //   ]
+  // },
   // {
   //   title: "Developer Integration Portal",
   //   dates: "2025",
