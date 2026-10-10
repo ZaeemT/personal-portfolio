@@ -54,7 +54,7 @@ export const exp: Experience[] = [
       // "Designed and implemented a Developer Integration Portal using Go and React, enabling streamlined access to in-house services (Transliteration, OCR, Facial Comparison, Document Validation, Facial Spoof Check). Improved developer integration time by 60%.",
       "Built a high-performance Go microservice for scraping and updating the Active Taxpayers List (ATL), reducing data refresh time from hours to under 15 minutes and ensuring weekly tax-status accuracy.",
     ],
-    skills: ["Go", "Python", "React.js", "AWS", "Docker", "MongoDB"],
+    skills: ["Go", "Python", "LLMs", "LangChain", "React.js", "AWS", "Docker", "MongoDB"],
     logoUrl: "/unikrew_logo.svg",
     href: "https://www.unikrew.com"
   },
@@ -136,6 +136,20 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: "Catalogue Visual Search",
+    description: "A visual search engine for fashion e-commerce: upload a photo and get back visually similar catalogue items, each with a plain-English reason for the match. Built on ~400,000 images with a CLIP-style embedding index served from FastAPI. Benchmarked brute-force retrieval across a ~400× range of catalogue sizes to verify its O(n) behaviour.",
+    technologies: ["Embeddings", "CLIP Models", "HuggingFace", "FastAPI"],
+    href: "https://github.com/ZaeemT/catalogue-visual-search",
+    video: "https://github.com/user-attachments/assets/b01ea7df-7d25-4e32-a8b8-88ef2e0dd349",
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/ZaeemT/catalogue-visual-search",
+        icon: React.createElement(GithubIcon, { className: "size-3" }),
+      },
+    ]
+  },
+  {
     title: "Education Council",
     description: "An AI Council system that provides democratic, consensus-based advice of opportunities for future studies. The system uses a combination of AI Agents and Web scrapers to provide personalized recommendations for students based on their interests, skills, and academic performance.",
     technologies: ["Vite.js", "TypeScript", "Tailwind CSS", "FastAPI", "OpenRouter", "CrewAI", "GCP"],
@@ -190,20 +204,20 @@ export const projects: Project[] = [
   //     },
   //   ]
   // },
-  // {
-  //   title: "HR Salary Slip Portal",
-  //   description: "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
-  //   technologies: ["Python", "React.js", "FastAPI", "MongoDB"],
-  //   href: "https://github.com/ZaeemT/hr-salary-slip-portal",
-  //   video: "https://github.com/user-attachments/assets/47c31b65-644f-4cc5-90b5-da7bcb8a0d1e",
-  //   links: [
-  //     {
-  //       type: "Source",
-  //       href: "https://github.com/ZaeemT/hr-salary-slip-portal",
-  //       icon: React.createElement(GithubIcon, { className: "size-3" }),
-  //     },
-  //   ]
-  // },
+  {
+    title: "HR Salary Slip Portal",
+    description: "Web app for HR to upload Excel salary data, generate PDF salary slips, and email them to employees automatically.",
+    technologies: ["Python", "React.js", "FastAPI", "MongoDB"],
+    href: "https://github.com/ZaeemT/hr-salary-slip-portal",
+    video: "https://github.com/user-attachments/assets/47c31b65-644f-4cc5-90b5-da7bcb8a0d1e",
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/ZaeemT/hr-salary-slip-portal",
+        icon: React.createElement(GithubIcon, { className: "size-3" }),
+      },
+    ]
+  },
   // {
   //   title: "Developer Integration Portal",
   //   dates: "2025",
