@@ -106,18 +106,18 @@ export function Work() {
         </Accordion>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 5}>
-        <div className="flex flex-col content-center item-center md:flex-row lg:flex-row">
-          <Link href={resume.link} target="_blank">
-            <ShimmerButton className="shadow-2xl" borderRadius="50px">
+        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <Link href={resume.link} target="_blank" className="w-full sm:w-auto">
+            <ShimmerButton className="w-full shadow-2xl sm:w-auto" borderRadius="50px">
               <FaFilePdf className="size-3 text-white mr-2" />
               <span className="whitespace-pre-wrap text-center text-xs font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
                 View my Resume
               </span>
             </ShimmerButton>
           </Link>
-          <div className="text-sm self-center font-semibold mx-3">OR</div>
-          <Link href={linkedin.link} target="_blank">
-            <ShimmerButton>
+          <div className="text-sm font-semibold text-muted-foreground">OR</div>
+          <Link href={linkedin.link} target="_blank" className="w-full sm:w-auto">
+            <ShimmerButton className="w-full shadow-2xl sm:w-auto" borderRadius="50px">
               <FaLinkedinIn className="size-3 text-white mr-2" />
               <span className="whitespace-pre-wrap text-center text-xs font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-md">
                 View my LinkedIn profile
