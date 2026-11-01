@@ -327,5 +327,5 @@ export const github: Social = {
 };
 
 export const resume: Social = {
-  link: "https://drive.google.com/file/d/145mKBd3NwiDa4NhNTv2Uo6krXvUSniTh/view?usp=sharing",
+  link: "https://drive.google.com/file/d/1al1cVH8DMmLi9RIpZGlaj36vk_lHKTME/view?usp=sharing",
 };
