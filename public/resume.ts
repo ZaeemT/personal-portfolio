@@ -48,7 +48,7 @@ export const exp: Experience[] = [
     title: "Full-Stack Engineer",
     period: "May. 2025 – Present",
     description: [
-      "Developed an AI voice banking agent by integrating OpenAI and LangChain with a Go backend, enabling users to execute complete banking workflows through natural conversation rather than traditional UI navigation.",
+      "Built an AI voice banking agent with LLMs and Python backend, letting users complete full banking workflows by voice, that passed CISO security reviews at 2 major Pakistani banks, leading to pilots with 20,000 real users.",
       "Built a payment gateway with an integrated merchant portal, providing merchants a developer console for API key management and real-time visibility into transactions processed through their business.",
       "Engineered a full-stack Incentive Management Module (Python + React) used by 2 major banks in Pakistan, automating incentive calculations and reducing manual processing effort by 40%.",
       // "Designed and implemented a Developer Integration Portal using Go and React, enabling streamlined access to in-house services (Transliteration, OCR, Facial Comparison, Document Validation, Facial Spoof Check). Improved developer integration time by 60%.",
